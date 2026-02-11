@@ -1,0 +1,99 @@
+Create table "pidgin_words" in database with 3 fields:
+
+"id" - int, primary key, auto-increment, 
+"word" - varchar (255), 
+"explanation" - text
+
+Create 2 pages:
+1. List of pidgin words
+2. When user click the link from list of words he goes to page with detailed explanation of this word
+
+----------------------------------------------------
+
+Create table "users" in database with fields:
+
+"id" - int, primary key, auto-increment, 
+"name" - varchar (255), 
+"password" - varchar (255), 
+"email" - varchar (255)
+
+Write a code of page signup containing the form with 3 text input fields: Name, Password and Email and button "Sign up". 
+When user click on the button values from the form should be inserted into database table "users".
+
+HINT!!! For this you need to use SQL query and put values from users input into this:
+
+$sql = "INSERT INTO songs VALUES ( 4, '".$_POST["name"]."', 'Zlatan', 'wwtrrtertert')";
+
+------------------------------------------------------
+
+Create table "products" in database with fields:
+
+"id" - int, primary key, auto-increment, 
+"name" - varchar (255), 
+"description" - varchar (255)
+
+Make a new page /products/index.php and add link "Products" to menu for it. 
+When user click on this link he sees  the list of products similar to list of pidgin words. 
+Next to every product you need to add button "Buy". If logged user press the button you need to add product name to the \
+session variable $_SESSION["user"]["products"] which is list (indexed array) of product names.
+
+HINT! PHP code for adding products will be smth like:
+
+$_SESSION["user"]["products"][] = $_POST["name"];
+
+HINT! HTML code for list of products shoud be like:
+
+<?php foreach($products as $product): ?>
+
+<form><?=$product["name"]?><input type="submit" name="buy" value="Buy">
+<input type="hidden" name="name" value="<?=$product["name"]?>"> 
+</form><br><br>
+
+<?php endforeach; ?>
+
+Then make a page /users/basket.php and add link "Basket" to menu for it. When logged user click on it he will see list 
+of selected products. You need to print it out from $_SESSION["user"]["products"] array.
+
+-------------------------
+
+Add new column to table "products":@@
+
+"price" - decimal(10,2) with default value NULL@@
+
+Then update all records in table with price values@@
+
+Add price information to pages "Products" and "Basket". Products should be displayed in form of table on these pages 
+with following columns:@@
+
+First column should contain product name and on next line description with small letters.@@
+
+Second column should contain price with dollar sign.@@
+
+Third columns should contain quantity. On "Products" page it should be input field. 
+On "Basket" page it should be just text. @@
+
+Forth column should contain for "Products" page - button "Add to basket". 
+For "Basket" page - total ammount to pay for this product ( price * qty ). @@
+
+The last row of table on page "Basket" should contain total ammount to pay for all products.
+
+----------
+
+GIT
+
+https://git-scm.com
+
+git clone https://github.com/chinakeemmanuel-lab/emmalove.git
+
+git status
+
+git diff
+
+git add *
+
+git commit -m "Initial commit"
+
+git push
+
+
+

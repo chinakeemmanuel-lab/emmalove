@@ -1,0 +1,26 @@
+body { 
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+a {
+    color: skyblue;
+}
+
+table, th, td {
+    border: 0;
+    padding: 8px;
+}
+
+.right {
+    text-align: right;
+}
+
+.error {
+    color: deeppink;
+}
+
+.basket {
+    border:1px solid;
+}
